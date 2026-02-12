@@ -2,9 +2,10 @@ package com.example.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDetailsServiceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {ReactiveUserDetailsServiceAutoConfiguration.class})
 @EnableDiscoveryClient
 public class GatewayApplication {
 
