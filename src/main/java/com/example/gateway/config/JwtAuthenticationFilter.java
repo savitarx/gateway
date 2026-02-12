@@ -57,7 +57,7 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
             return buildErrorResponse(exchange, "Invalid or expired JWT token");
         }
     }
-
+//build error response when the jwt token is invalid return 401 when there is any authentication issues
     private Mono<Void> buildErrorResponse(ServerWebExchange exchange, String message) {
         try {
             exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
